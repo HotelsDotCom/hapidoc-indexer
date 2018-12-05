@@ -1,0 +1,32 @@
+hapidocindexer:
+  build: .
+  stdin_open: true # this is the -i flag in docker run
+  tty: true # this is the -t flag in docker run
+
+  environment:
+    MONGO_DB_HOST: "mongo"
+    MONGO_DB_PORT: "27017"
+    HAPIDOC_WEB_HOST: "<hapidoc-url>"
+    HAPIDOC_WEB_PORT: "<hapidoc-port>"
+    HAPIDOC_WEB_PASS: "12345"
+    USE_HOUND: "False"
+    HOUND_HOST: "<hound-url>"
+    BITBUCKET_HOST: "<bitbucket-url>"
+    IS_BITBUCKET_SSH: "False"
+    HOUND_USERNAME: "<hound-username>"
+    HOUND_PASSWORD: "<hound-password>"
+    BITBUCKET_USERNAME: "<bitbucket-username>"
+    BITBUCKET_PASSWORD: "<bitbucket-password>"
+    # use a regex, e.g. (Service;$$)|(ServiceImpl;$$)|(Client;$$)|(ClientImpl;$$)|(ServiceClient;$$)|(ServiceClientImpl;$$)
+    CALL_NAME: ".*"
+    # use a regex, the one below considers non-test Java files
+    # use single quotes in case you include the backslash (\) character
+    CLIENT_NAME: '(?<!(Test))\.java'
+    # projects/repos to be searched for usage examples. Use one of the below:
+    # 'all': all repos/projects
+    # 'project1,project2/repo1,project2/repo2': comma separated list of projects and/or repos. This will
+    # search every repo in project 1, and repo1 and repo2 in project2
+    CLIENT_REPOS: "all"
+
+  external_links:
+    - mongo:mongo

@@ -1,0 +1,2 @@
+53 18 * * * /hapidocindexer/run.sh >> /hapidocindexer/logs/hapidocindexer.log 2>&1
+# An empty line is required at the end of this file for a valid cron file.
