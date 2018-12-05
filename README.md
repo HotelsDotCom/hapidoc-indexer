@@ -18,8 +18,8 @@ The purpose of HApiDoc is to provide a set of components that cover the above li
 
 ### HApiDoc Architecture
 HApiDoc consists of 2 main components that run as Docker containers:
-- HApiDocIndexer: This component aims to create the dataset that will be used from CLAMS, apply CLAMS on the dataset and store the results in MongoDB.
-- HApiDocWeb: This is the web service for HApiDoc. It shows results on a neat web page.
+- [HApiDocIndexer](https://github.com/HotelsDotCom/hapidoc-indexer): This component aims to create the dataset that will be used from CLAMS, apply CLAMS on the dataset and store the results in MongoDB.
+- [HApiDocWeb](https://github.com/HotelsDotCom/hapidoc-web): This is the web service for HApiDoc. It shows results on a neat web page.
 
 ![HApiDoc architecture.](hapidoc-architecture.png)
 
@@ -106,7 +106,7 @@ Thi component uses the output produced by HApiDocIndexer to produce documents wh
 HApiDocIndexer can be run using Docker. You can either run vs a remote mongodb and a host on which HApiDocWeb is already running or using a linked mongodb (for testing purposes).
 
 ### Running (vs remote MongoDB)
-This will store all data to the mongo host (MONGO_DB_HOST) provided in [docker-compose.yml](docker-compose-with-linked-mongo.yml).
+This will store all data to the mongo host (MONGO_DB_HOST) provided in [docker-compose.yml](docker-compose.yml).
 
 ```
 docker-compose build
@@ -128,7 +128,7 @@ docker-compose -f docker-compose-with-linked-mongo-container.yml up
 
 *Note*: Make sure you have modified the docker-compose file you're using appropriately.
 
-*Note*: To be able to test the post request (*/refresh*) you need to be run HApiDocWeb as well.
+*Note*: To be able to test the post request (*/refresh*) you need to run [HApiDocWeb(https://github.com/HotelsDotCom/hapidoc-web) as well.
 
 ## Contact
 If you would like to ask any questions about or discuss HApiDOC please contact [a member of the project team](https://github.com/orgs/HotelsDotCom/teams/hapidoc-committers/members).
