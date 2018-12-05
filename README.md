@@ -128,7 +128,7 @@ docker-compose -f docker-compose-with-linked-mongo-container.yml up
 
 *Note*: Make sure you have modified the docker-compose file you're using appropriately.
 
-*Note*: To be able to test the post request (*/refresh*) you need to run [HApiDocWeb(https://github.com/HotelsDotCom/hapidoc-web) as well.
+*Note*: To be able to test the post request (*/refresh*) you need to run [HApiDocWeb](https://github.com/HotelsDotCom/hapidoc-web) as well.
 
 ## Contact
 If you would like to ask any questions about or discuss HApiDOC please contact [a member of the project team](https://github.com/orgs/HotelsDotCom/teams/hapidoc-committers/members).
